@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <el-button>您好这里是前端工程界面</el-button>
+    <h1>{{ this.msg }}</h1>
+    <el-button><a href="page_1.html">前往page_1</a></el-button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '当前为page_2'
     }
   }
 }

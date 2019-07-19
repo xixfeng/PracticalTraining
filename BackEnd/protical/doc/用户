@@ -1,0 +1,21 @@
+1.登陆
+url:/user/login
+请求参数:{phone,key}
+错误码:400 用户名或密码错误
+
+2.注销
+url:/user/signOut
+
+3.注册
+    url:/user/register
+请求参数:{user,key,phone,code}
+错误码: 400：验证码错误  401：手机号已被使用
+
+4.找回密码
+url:/user/retrievePassword
+请求参数：{phone,code,key}
+错误码: 400:验证码错误 401：用户不存在
+
+5.发送验证码
+url:/user/getCode
+请求参数：{phone}

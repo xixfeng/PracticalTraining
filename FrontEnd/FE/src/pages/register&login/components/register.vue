@@ -71,7 +71,11 @@
           },
         getcode(){
             if(this.phone !== ''){
-              this.axios.post('/user/getCode',{phone:this.phone}).then(res =>{});
+              this.axios.post('/user/getCode',{phone:this.phone}).then(res =>{
+                console.log(res)
+              }).catch(function(e){
+                console.log(e)
+              });
               this.btn_msg = '验证码已发送';
             }
             else{
@@ -83,7 +87,7 @@
           if(this.$route.params.isregister === 'true'){
             if(  this.phone !== '' && this.code !== '' && this.key !== '' && this.user !== '' && !(this.key !== this.verification && this.key !== '')){
               this.isloading = true;
-              this.axios.post('/user/register',{user:this.user, key:this.key, phone:this.phone, code:this.code}.then(response => {
+              this.axios.post('/user/register',{user:this.user, key:this.key, phone:this.phone, code:this.code}).then(response => {
                 console.log(response);
                 if(response.status === 400){
                   alert("验证码错误");
@@ -101,7 +105,9 @@
                   this.isloading = false;
                   this.$router.back();
                 }
-              }));
+              }).catch(function (e) {
+                console.log(e)
+              });
             }
             else{
               alert("信息尚未填写完整");
@@ -110,7 +116,7 @@
           else{
             if(  this.phone !== '' && this.code !== '' && this.key !== '' && !(this.key !== this.verification && this.key !== '')){
               //this.isloading = true;
-              this.axios.post('/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}.then(response => {
+              this.axios.post('/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}).then(response => {
                 console.log(response);
                 if(response.status === 400){
                   alert("验证码错误");
@@ -128,16 +134,15 @@
                   this.isloading = false;
                   this.$router.back();
                 }
-              }));
+              }).catch(function (e) {
+                console.log(e)
+              });
             }
             else{
               alert("信息尚未填写完整");
             }
           }
-
         }
-
-
       }
     }
 </script>

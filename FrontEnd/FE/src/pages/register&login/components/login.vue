@@ -48,8 +48,11 @@ export default {
   methods:{
     check(){
       this.axios.get("/user/login",{phone:this.phone,key:this.key}).then(res => {
+        console.log(res)
         this.usertype = res.usertype;
         this.isValid = res.status;
+      }).catch(function (e) {
+        console.log(e)
       });
 
       if(this.isValid === 400){

@@ -62,7 +62,7 @@
             if(this.key !== this.verification && this.key !== ''){
                 this.$message.error('两次密码输入不匹配');
             }
-            else{
+            else if(this.key === this.verification && this.key !== ''){
               this.$message({
                 message: '两次密码输入匹配',
                 type: 'success'

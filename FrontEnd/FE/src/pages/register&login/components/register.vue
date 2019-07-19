@@ -81,7 +81,7 @@
         submit(){
            // 如果是注册新的用户则提交用户名
           if(this.$route.params.isregister === 'true'){
-            if(  this.phone !== '' && this.code !== '' && this.key !== '' && this.user !== '' && (this.key !== this.verification && this.key !== '')){
+            if(  this.phone !== '' && this.code !== '' && this.key !== '' && this.user !== '' && !(this.key !== this.verification && this.key !== '')){
               this.isloading = true;
               this.axios.post('/user/register',{user:this.user, key:this.key, phone:this.phone, code:this.code}.then(response => {
                 console.log(response);
@@ -108,8 +108,8 @@
             }
           }
           else{
-            if(  this.phone !== '' && this.code !== '' && this.key !== '' && (this.key !== this.verification && this.key !== '')){
-              this.isloading = true;
+            if(  this.phone !== '' && this.code !== '' && this.key !== '' && !(this.key !== this.verification && this.key !== '')){
+              //this.isloading = true;
               this.axios.post('/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}.then(response => {
                 console.log(response);
                 if(response.status === 400){

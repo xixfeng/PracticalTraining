@@ -91,20 +91,19 @@
                 console.log(response);
                 if(response.status === 400){
                   alert("验证码错误");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
                 }
                 if(response.status === 401){
                   alert("手机号已经被注册");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
+                }
+                if(response.status === 404){
+                  alert("服务器404错误");
                 }
                 else{
                   alert("注册成功");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
                   this.$router.back();
                 }
+                this.btn_msg = '获取验证码';
+                this.isloading = false;
               }).catch(function (e) {
                 console.log(e)
               });
@@ -115,25 +114,24 @@
           }
           else{
             if(  this.phone !== '' && this.code !== '' && this.key !== '' && !(this.key !== this.verification && this.key !== '')){
-              //this.isloading = true;
+              this.isloading = true;
               this.axios.post('/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}).then(response => {
                 console.log(response);
                 if(response.status === 400){
                   alert("验证码错误");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
                 }
                 if(response.status === 401){
                   alert("用户不存在");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
+                }
+                if(response.status === 404){
+                  alert("服务器404错误");
                 }
                 else{
                   alert("重设密码成功");
-                  this.btn_msg = '获取验证码';
-                  this.isloading = false;
                   this.$router.back();
                 }
+                this.btn_msg = '获取验证码';
+                this.isloading = false;
               }).catch(function (e) {
                 console.log(e)
               });

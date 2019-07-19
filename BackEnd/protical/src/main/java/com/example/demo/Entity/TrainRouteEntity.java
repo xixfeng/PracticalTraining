@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 
 @Entity(name = "train_route")
 public class TrainRouteEntity {
+    @Id
+    private Long id;
+
     @Column(name = "train_id")
     private Long trainId;
 

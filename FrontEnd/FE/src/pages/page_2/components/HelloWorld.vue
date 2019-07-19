@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ this.msg }}</h1>
-    <el-button><a href="page_1.html">前往page_1</a></el-button>
+    <el-button><a href="register&login.html">前往page_1</a></el-button>
   </div>
 </template>
 

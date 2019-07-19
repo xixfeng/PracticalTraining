@@ -6,11 +6,11 @@
         <el-form-item>
           <h1>欢迎登陆</h1>
         </el-form-item>
-        <el-form-item label="用户名">
-          <el-input v-model="username"></el-input>
+        <el-form-item label="手机号">
+          <el-input v-model="phone"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input v-model="pwd" type="password"></el-input>
+          <el-input v-model="key" type="password"></el-input>
         </el-form-item>
         <el-form-item>
           <el-row gutter="5">
@@ -24,6 +24,9 @@
           </el-col>
           </el-row>
         </el-form-item>
+        <el-form-item>
+          <router-link to="/register/false" >找回密码</router-link>
+        </el-form-item>
       </el-form>
       </div>
     </div>
@@ -36,20 +39,20 @@ export default {
   name: 'login',
   data () {
     return {
-      username:'',
-      pwd:'',
+      phone:'',
+      key:'',
       usertype:'admin',
-      isValid:true
+      isValid:0
     }
   },
   methods:{
     check(){
-      this.axios.get("/uservarification",{username:this.username,pwd:this.username}).then(res => {
+      this.axios.get("/user/login",{phone:this.phone,key:this.key}).then(res => {
         this.usertype = res.usertype;
-        this.isValid = res.isValid;
+        this.isValid = res.status;
       });
 
-      if(!this.isValid){
+      if(this.isValid === 400){
         alert("用户名或密码错误");
         return;
       }
@@ -61,7 +64,7 @@ export default {
       }
     },
     toregister(){
-      this.$router.push('/register');
+      this.$router.push('/register/true');
     }
   }
 }
@@ -69,25 +72,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .card-wrapper{
-    display:block;
-    margin-top:100px;
-    margin-left:400px;
-    margin-right:400px;
-    background-color: azure;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px grey;
-  }
-  .inner-wrapper{
-    padding:30px;
-  }
-  router-link:link{
-    color:white;
-    font-style:italic;
-  }
-  router-link:active{
-    color:white;
-  }
-  router-link:
-
+  @import "../assets/wrapper_styles.css";
 </style>

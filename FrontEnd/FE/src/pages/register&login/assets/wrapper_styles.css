@@ -1,0 +1,13 @@
+.card-wrapper{
+  display:block;
+  margin:100px;
+  margin-left:400px;
+  background-color: azure;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px grey;
+  width: 550px;
+}
+.inner-wrapper{
+
+  padding:30px;
+}

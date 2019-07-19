@@ -12,7 +12,7 @@ export default new Router({
       name: 'login',
       component: login
     },{
-    path:'/register',
+    path:'/register/:isregister',
       name: 'register',
       component:register
     }

@@ -48,30 +48,32 @@ export default {
   },
   methods:{
     check(){
-      if(this.phone !== '' && this.key !== '') {
-        this.isloading = true;
-        this.axios.get("/user/login", {phone: this.phone, key: this.key}).then(res => {
-          console.log(res);
-          this.usertype = res.usertype;
-          this.isValid = res.status;
-          if (this.isValid === 400) {
-            alert("用户名或密码错误");
-            this.isloading = false;
-            return;
-          }
-          if (this.usertype === "admin") {
-            window.location.href = "index.html?usertype=admin";
-          }
-          if (this.usertype === 'users') {
-            window.location.href = "index.html?usertype=user";
-          }
-        }).catch(function (e) {
-          console.log(e)
-        });
-      }
-      else{
-        this.$message.error("请填写完整的信息");
-      }
+      // if(this.phone !== '' && this.key !== '') {
+      //   this.isloading = true;
+      //   this.axios.get("/user/login", {phone: this.phone, key: this.key}).then(res => {
+      //     console.log(res);
+      //     this.usertype = res.usertype;
+      //     this.isValid = res.status;
+      //     if (this.isValid === 400) {
+      //       alert("用户名或密码错误");
+      //       this.isloading = false;
+      //       return;
+      //     }
+      //     //TODO 跳转到管理员页面所在的html
+      //     // if (this.usertype === "admin") {
+      //     //   window.location.href = "xxx.html?phone=" + this.phone;
+      //     // }
+      //     if (this.usertype === 'users') {
+      //       window.location.href = "index.html?phone=" + this.phone;
+      //     }
+      //   }).catch(function (e) {
+      //     console.log(e)
+      //   });
+      // }
+      // else{
+      //   this.$message.error("请填写完整的信息");
+      // }
+      window.location.href = "index.html?phone=" + this.phone;
     },
     toregister(){
       this.$router.push('/register/true');

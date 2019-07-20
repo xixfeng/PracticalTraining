@@ -19,3 +19,17 @@ url:/user/retrievePassword
 5.发送验证码
 url:/user/getCode
 请求参数：{phone}
+
+6. 车票查询
+url:/query/searchticket
+请求参数:{startcity,arrivalcity,startday}
+请求方法：post
+返回参数:[{no,startcity,arrivalcity,starttime,arrivaltime,price,number},{no,startcity,arrivalcity,starttime,arrivaltime,price,number},{no,startcity,arrivalcity,starttime,arrivaltime,price,number}....]
+注：no:火车编号 startcity:出发地，arrivalcity:目的地, starttime:出发时间,arrivaltime:到达时间,price:票价,number:剩余票数
+
+7. 下单
+url:/buying/placeorder
+请求参数：{no,startcity,arrivalcity,starttime,arrivaltime}
+post
+8.
+

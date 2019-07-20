@@ -48,6 +48,7 @@ public class UserServiceImp implements UserService {
         userEntity.setUserName(user);
         userEntity.setPassword(key);
         userEntity.setPhone(phone);
+        userEntity.setRole("customer");
         userRepository.save(userEntity);
         return new ResponseEntity(200,null,null);
     }

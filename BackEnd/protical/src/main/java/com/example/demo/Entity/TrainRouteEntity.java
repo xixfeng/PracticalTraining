@@ -24,6 +24,11 @@ public class TrainRouteEntity {
 
     private Double fee;
 
+
+    @Column(name = "remaining_tickets")
+    private Long remainingTickets;
+
+
     public Long getTrainId() {
         return trainId;
     }
@@ -31,6 +36,24 @@ public class TrainRouteEntity {
     public void setTrainId(Long trainId) {
         this.trainId = trainId;
     }
+
+    public Long getRemainingTickets() {
+        return remainingTickets;
+    }
+
+    public void setRemainingTickets(Long remainingTickets) {
+        this.remainingTickets = remainingTickets;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+:
 
     public Long getOriginId() {
         return originId;

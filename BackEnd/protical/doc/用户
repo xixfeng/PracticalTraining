@@ -37,9 +37,6 @@ url:/query/searchticket
               "edPrice": 119
           },{},{},{}......]
 
-7. 下单
-url:/buying/placeorder
-请求参数：{no,startcity,arrivalcity,starttime,arrivaltime}
-post
-8.
+
+7.
 

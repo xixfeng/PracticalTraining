@@ -24,8 +24,18 @@ url:/user/getCode
 url:/query/searchticket
 请求参数:{startcity,arrivalcity,startday}
 请求方法：post
-返回参数:[{no,startcity,arrivalcity,starttime,arrivaltime,price,number},{no,startcity,arrivalcity,starttime,arrivaltime,price,number},{no,startcity,arrivalcity,starttime,arrivaltime,price,number}....]
-注：no:火车编号 startcity:出发地，arrivalcity:目的地, starttime:出发时间,arrivaltime:到达时间,price:票价,number:剩余票数
+返回参数:[{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          },{},{},{}......]
 
 7. 下单
 url:/buying/placeorder

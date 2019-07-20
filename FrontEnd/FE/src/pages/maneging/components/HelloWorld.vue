@@ -10,7 +10,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '当前为page_2'
+      msg: '管理页面'
     }
   }
 }

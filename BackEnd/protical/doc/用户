@@ -19,3 +19,24 @@ url:/user/retrievePassword
 5.发送验证码
 url:/user/getCode
 请求参数：{phone}
+
+6. 车票查询
+url:/query/searchticket
+请求参数:{startcity,arrivalcity,startday}
+请求方法：post
+返回参数:[{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          },{},{},{}......]
+
+
+7.
+

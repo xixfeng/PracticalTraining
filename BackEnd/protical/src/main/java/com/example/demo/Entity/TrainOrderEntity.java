@@ -8,19 +8,22 @@ public class TrainOrderEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
 
-    private Long trainId;
+    private Long userId;
+
+    private String trainId;
 
     private Double fee;
 
     private Double discount;
 
-    private Long orgin;
+    private String orgin;
 
-    private Long destination;
+    private String destination;
 
     private String type;
 
     private String seat;
+
 
     public Long getOrderId() {
         return orderId;
@@ -30,12 +33,36 @@ public class TrainOrderEntity {
         this.orderId = orderId;
     }
 
-    public Long getTrainId() {
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getTrainId() {
         return trainId;
     }
 
-    public void setTrainId(Long trainId) {
+    public void setTrainId(String trainId) {
         this.trainId = trainId;
+    }
+
+    public String getOrgin() {
+        return orgin;
+    }
+
+    public void setOrgin(String orgin) {
+        this.orgin = orgin;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public Double getFee() {
@@ -54,21 +81,6 @@ public class TrainOrderEntity {
         this.discount = discount;
     }
 
-    public Long getOrgin() {
-        return orgin;
-    }
-
-    public void setOrgin(Long orgin) {
-        this.orgin = orgin;
-    }
-
-    public Long getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Long destination) {
-        this.destination = destination;
-    }
 
     public String getType() {
         return type;

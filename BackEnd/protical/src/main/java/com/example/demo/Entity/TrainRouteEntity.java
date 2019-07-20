@@ -1,74 +1,115 @@
 package com.example.demo.Entity;
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.sql.Time;
 
 @Entity(name = "train_route")
 public class TrainRouteEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "train_id")
-    private Long trainId;
+    private String trainId;
 
-    @Column(name = "origin_id")
-    private Long originId;
+    private String origin;
 
-    @Column(name = "destination_id")
-    private Long destinationId;
+    private String destination;
 
     @Column(name = "start_time")
-    private Timestamp startTime;
+    private Time startTime;
 
     @Column(name = "arrive_time")
-    private Timestamp arriveTime;
+    private Time arriveTime;
 
-    private Double fee;
+    private Long ydNum;
 
-    public Long getTrainId() {
+    private Double ydPrice;
+
+    private Long edNum;
+
+    private Double edPrice;
+
+
+
+    public String getTrainId() {
         return trainId;
     }
 
-    public void setTrainId(Long trainId) {
+    public void setTrainId(String trainId) {
         this.trainId = trainId;
     }
 
-    public Long getOriginId() {
-        return originId;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setOriginId(Long originId) {
-        this.originId = originId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Long getDestinationId() {
-        return destinationId;
+
+    public String getOrigin() {
+        return origin;
     }
 
-    public void setDestinationId(Long destinationId) {
-        this.destinationId = destinationId;
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 
-    public Timestamp getStartTime() {
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public Time getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Timestamp startTime) {
+    public void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
-    public Timestamp getArriveTime() {
+    public Time getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(Timestamp arriveTime) {
+    public void setArriveTime(Time arriveTime) {
         this.arriveTime = arriveTime;
     }
 
-    public Double getFee() {
-        return fee;
+    public Double getEdPrice() {
+        return edPrice;
     }
 
-    public void setFee(Double fee) {
-        this.fee = fee;
+    public void setEdPrice(Double edPrice) {
+        this.edPrice = edPrice;
+    }
+
+    public Long getYdNum() {
+        return ydNum;
+    }
+
+    public void setYdNum(Long ydNum) {
+        this.ydNum = ydNum;
+    }
+
+    public Double getYdPrice() {
+        return ydPrice;
+    }
+
+    public void setYdPrice(Double ydPrice) {
+        this.ydPrice = ydPrice;
+    }
+
+    public Long getEdNum() {
+        return edNum;
+    }
+
+    public void setEdNum(Long edNum) {
+        this.edNum = edNum;
     }
 }

@@ -6,16 +6,16 @@ public class TrainEntity {
     @Id
     @Column(name = "train_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long trainId;
+    private String trainId;
 
     private String type;
 
 
-    public Long getTrainId() {
+    public String getTrainId() {
         return trainId;
     }
 
-    public void setTrainId(Long trainId) {
+    public void setTrainId(String trainId) {
         this.trainId = trainId;
     }
 

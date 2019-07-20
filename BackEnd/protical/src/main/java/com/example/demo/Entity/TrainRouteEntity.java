@@ -8,13 +8,11 @@ public class TrainRouteEntity {
     private Long id;
 
     @Column(name = "train_id")
-    private Long trainId;
+    private String trainId;
 
-    @Column(name = "origin_id")
-    private Long originId;
+    private String origin;
 
-    @Column(name = "destination_id")
-    private Long destinationId;
+    private String destination;
 
     @Column(name = "start_time")
     private Timestamp startTime;
@@ -29,11 +27,11 @@ public class TrainRouteEntity {
     private Long remainingTickets;
 
 
-    public Long getTrainId() {
+    public String getTrainId() {
         return trainId;
     }
 
-    public void setTrainId(Long trainId) {
+    public void setTrainId(String trainId) {
         this.trainId = trainId;
     }
 
@@ -53,22 +51,21 @@ public class TrainRouteEntity {
         this.id = id;
     }
 
-:
 
-    public Long getOriginId() {
-        return originId;
+    public String getOrigin() {
+        return origin;
     }
 
-    public void setOriginId(Long originId) {
-        this.originId = originId;
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 
-    public Long getDestinationId() {
-        return destinationId;
+    public String getDestination() {
+        return destination;
     }
 
-    public void setDestinationId(Long destinationId) {
-        this.destinationId = destinationId;
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public Timestamp getStartTime() {

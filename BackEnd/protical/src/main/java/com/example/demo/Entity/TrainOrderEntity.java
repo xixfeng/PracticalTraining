@@ -10,15 +10,15 @@ public class TrainOrderEntity {
 
     private Long userId;
 
-    private Long trainId;
+    private String trainId;
 
     private Double fee;
 
     private Double discount;
 
-    private Long orgin;
+    private String orgin;
 
-    private Long destination;
+    private String destination;
 
     private String type;
 
@@ -41,12 +41,28 @@ public class TrainOrderEntity {
         this.userId = userId;
     }
 
-    public Long getTrainId() {
+    public String getTrainId() {
         return trainId;
     }
 
-    public void setTrainId(Long trainId) {
+    public void setTrainId(String trainId) {
         this.trainId = trainId;
+    }
+
+    public String getOrgin() {
+        return orgin;
+    }
+
+    public void setOrgin(String orgin) {
+        this.orgin = orgin;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public Double getFee() {
@@ -65,21 +81,6 @@ public class TrainOrderEntity {
         this.discount = discount;
     }
 
-    public Long getOrgin() {
-        return orgin;
-    }
-
-    public void setOrgin(Long orgin) {
-        this.orgin = orgin;
-    }
-
-    public Long getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Long destination) {
-        this.destination = destination;
-    }
 
     public String getType() {
         return type;

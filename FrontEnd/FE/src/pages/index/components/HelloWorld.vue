@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <el-button ><a href="page_1.html">前往page_1</a></el-button>
   </div>
 </template>
 

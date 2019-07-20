@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <div style="position: absolute; z-index: 10;margin-left:300px;margin-top:150px;">
-          <el-container style="height:300px;border-style:solid; border-color:#EBEEF5;border-radius: 10px">
+  <div style="width:100%">
+    <div style="display:block;position: absolute; z-index: 10;margin-left:330px;margin-right:100px;margin-top:100px;border-style:solid; border-color:#EBEEF5;border-radius: 13px">
+          <el-container style="height:300px;">
             <el-aside style="width:200px">
-              <el-menu router="true" style="height:400px;border-radius: 10px" default-active="singletrip">
+              <el-menu router="true" style="height:300px;border-radius: 9px 0 0 9px" default-active="singletrip">
                 <el-menu-item index="singletrip" class="tabs">单程</el-menu-item>
                 <el-menu-item index="twowaytrip" class="tabs">往返</el-menu-item>
                 <el-menu-item index="trains" class="tabs">车次信息</el-menu-item>
               </el-menu>
             </el-aside>
-            <el-main style="width: 500px;overflow: scroll">
+            <el-main style="width: 500px;overflow: scroll;background-color: white;border-radius:0 9px 9px 0">
               <router-view/>
             </el-main>
           </el-container>
@@ -30,8 +30,8 @@
             tabPosition:'left',
             imgList: [
               {id: 0, idView: require('../assets/1.jpg')},
-              {id: 1, name: '详情', idView: require('../assets/2.jpg')},
-              {id: 2, name: '推荐', idView: require('../assets/4.jpg')}
+              {id: 1, idView: require('../assets/2.jpg')},
+              {id: 2, idView: require('../assets/4.jpg')}
             ]
           }
       }

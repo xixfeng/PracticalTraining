@@ -1,6 +1,6 @@
 <template>
   <div >
-    <el-row style="background-color: white;color:black;padding:20px;border-radius: 0 0 0 40px">
+    <el-row style="background-color: white;color:black;padding:20px;border-radius: 0 0 40px 40px">
       <el-col span="5">
 <!--        图片-->
       </el-col>
@@ -17,7 +17,7 @@
     <el-menu :default-active="activetab"  mode="horizontal" router="true"
              background-color="#409EFF"
              text-color="white"
-             active-text-color="white" style="border-radius: 40px 0 0 0">
+             active-text-color="white" style="border-radius: 40px 0 0 20px">
       <el-menu-item index="ticketsearching" style="margin-left:350px;width:200px;">车票信息查询</el-menu-item>
       <el-menu-item index="profile" style="margin-left:200px;width:200px;">个人信息</el-menu-item>
     </el-menu>
@@ -32,7 +32,6 @@ export default {
     return {
       msg: '当前是index页面',
       phone:'',
-      username:'',
       activetab:'ticketsearching'
     }
   },
@@ -40,11 +39,6 @@ export default {
     var url = window.location.href;
     var param = url.substring(url.lastIndexOf("=") + 1,url.lastIndexOf("#"));
     this.phone = param;
-    this.axios.get("",{phone:this.phone}).then(res =>{
-      this.username = res.user
-    }).catch(function (e) {
-      console.log(e)
-    })
   },
   methods:{
     logout(){

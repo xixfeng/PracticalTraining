@@ -9,8 +9,6 @@ import trains from "../components/trains";
 import suggestion from "../components/suggestion";
 import p_orders from "../components/p_orders";
 import p_info from "../components/p_info";
-import formpane from "../components/formpane";
-import resultpane from "../components/resultpane";
 
 
 Vue.use(Router)
@@ -21,35 +19,26 @@ export default new Router({
       path: '/',
       name: 'mainpage',
       component: mainpage,
-      children: [{
+      children:[{
         path:'',
         name:'ticketsearching',
         component:ticketsearching,
         children:[{
           path:'',
-          name:'formpane',
-          component:formpane,
-          children:[{
-            path:'',
-            name:'singletrip',
-            component:singletrip
-          },{
-            path:'/singletrip',
-            name:'singletrip',
-            component:singletrip
-          },{
-            path:'/twowaytrip',
-            name:'twowaytrip',
-            component:twowaytrip
-          },{
-            path:'/trains',
-            name:'trains',
-            component:trains
-          }]
+          name:'singletrip',
+          component:singletrip
         },{
-          path:'/resultpane/:phone',
-          name:'resultpane',
-          component:resultpane
+          path:'/singletrip',
+          name:'singletrip',
+          component:singletrip
+        },{
+          path:'/twowaytrip',
+          name:'twowaytrip',
+          component:twowaytrip
+        },{
+          path:'/trains',
+          name:'trains',
+          component:trains
         }]
       },{
         path:'/ticketsearching',
@@ -57,31 +46,22 @@ export default new Router({
         component:ticketsearching,
         children:[{
           path:'',
-          name:'formpane',
-          component:formpane,
-          children:[{
-            path:'',
-            name:'singletrip',
-            component:singletrip
-          },{
-            path:'/singletrip',
-            name:'singletrip',
-            component:singletrip
-          },{
-            path:'/twowaytrip',
-            name:'twowaytrip',
-            component:twowaytrip
-          },{
-            path:'/trains',
-            name:'trains',
-            component:trains
-          }]
+          name:'singletrip',
+          component:singletrip
         },{
-          path:'/resultpane',
-          name:'resultpane',
-          component:resultpane
+          path:'/singletrip',
+          name:'singletrip',
+          component:singletrip
+        },{
+          path:'/twowaytrip',
+          name:'twowaytrip',
+          component:twowaytrip
+        },{
+          path:'/trains',
+          name:'trains',
+          component:trains
         }]
-      }, {
+      },{
         path:'/profile',
         name:'profile',
         component:profile,
@@ -102,7 +82,8 @@ export default new Router({
           name:'/suggestion',
           component:suggestion
         }]
-      }]
+      }
+      ]
     }
-    ]
+  ]
 })

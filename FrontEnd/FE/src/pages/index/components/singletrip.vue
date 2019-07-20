@@ -29,15 +29,20 @@
             startcity:'',
             arrivalcity:'',
             startday:'',
-            isloading:false
+            isloading:false,
+            phone:''
           }
       },
       methods:{
           submit(){
             if(this.startcity !== '' && this.arrivalcity !== '' && this.startday !== ''){
               this.isloading = true;
+              this.$router.push({name:'resultpane'});
               this.axios.get('/query/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
-
+                console.log(res);
+                this.$parent.$parent.ticketdata = res;
+              }).catch(function(e){
+                console.log(e);
               })
             }
             else{

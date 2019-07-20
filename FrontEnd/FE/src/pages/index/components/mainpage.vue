@@ -18,8 +18,8 @@
              background-color="#409EFF"
              text-color="white"
              active-text-color="white" style="border-radius: 40px 0 0 20px">
-      <el-menu-item index="ticketsearching" style="margin-left:350px;width:200px;">车票信息查询</el-menu-item>
-      <el-menu-item index="profile" style="margin-left:200px;width:200px;">个人信息</el-menu-item>
+      <el-menu-item index="/ticketsearching" style="margin-left:350px;width:200px;">车票信息查询</el-menu-item>
+      <el-menu-item index="/profile" style="margin-left:200px;width:200px;">个人信息</el-menu-item>
     </el-menu>
     <router-view></router-view>
   </div>
@@ -32,7 +32,250 @@ export default {
     return {
       msg: '当前是index页面',
       phone:'',
-      activetab:'ticketsearching'
+      activetab:'/ticketsearching',
+      ticketdata:[{
+        "id": 1,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 3,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      },{
+        "id": 2,
+        "trainId": "D1611",
+        "origin": "石家庄",
+        "destination": "济南",
+        "startTime": "22:00:00",
+        "arriveTime": "00:28:00",
+        "ydNum": 100,
+        "ydPrice": 192.5,
+        "edNum": 100,
+        "edPrice": 119
+      }]
     }
   },
   mounted() {

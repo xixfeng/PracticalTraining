@@ -125,6 +125,7 @@ public class TrainRouteEntity {
         this.edPrice=trainRouteEntity.edPrice;
         this.destination=trainRouteEntity.destination;
     }
+    public TrainRouteEntity(){}
     public TrainRouteEntity(Map map){
         if(map.containsKey("id"))this.id= Long.parseLong((String) map.get("id"));
         this.arriveTime= Time.valueOf((String)map.get("arriveTime"));

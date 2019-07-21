@@ -8,9 +8,11 @@ import com.example.demo.Entity.TrainRouteEntity;
 import com.example.demo.Service.TrainOrderService;
 import com.example.demo.Util.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TrainOrderServiceImp implements TrainOrderService {
     private TrainOrderRepository trainOrderRepository;
     private UserRepository userRepository;

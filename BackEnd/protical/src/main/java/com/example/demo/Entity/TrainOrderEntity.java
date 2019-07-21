@@ -34,6 +34,9 @@ public class TrainOrderEntity {
         this.type=(String)map.get("type");
         this.seat=(String)map.get("seat");
     }
+    public TrainOrderEntity(){
+
+    }
 
     public Long getOrderId() {
         return orderId;

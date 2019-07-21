@@ -41,8 +41,29 @@ url:/query/searchticket
 7.查看用户信息
 url:/user/getUserInfo
 请求参数:{phone}
+返回参数:
+{
+    "status": 200,
+    "msg": null,
+    "data": {
+        "userId": null,
+        "phone": "17381589960",
+        "userName": "llllly",
+        "balance": null,
+        "avatar": null,
+        "date": null,
+        "password": null,
+        "role": null
+    }
+}
 
 8.修改用户名
 url:/user/changeUserName
 请求参数:{phone,name}
+返回参数:
+{
+    "status": 200,
+    "msg": null,
+    "data": null
+}
 

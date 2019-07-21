@@ -6,9 +6,11 @@ import com.example.demo.Entity.TrainStationEntity;
 import com.example.demo.Service.TrainStationService;
 import com.example.demo.Util.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TrainStationServiceImp implements TrainStationService {
     private TrainStationRepository trainStationRepository;
     private TrainRouteRepository trainRouteRepository;

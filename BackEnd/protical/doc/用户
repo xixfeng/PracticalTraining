@@ -21,7 +21,7 @@ url:/user/getCode
 请求参数：{phone}
 
 6. 车票查询
-url:/query/searchticket
+url:/trainroute/searchticket
 请求参数:{startcity,arrivalcity,startday}
 请求方法：post
 返回参数:[{

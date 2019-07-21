@@ -1,6 +1,7 @@
 package com.example.demo.Entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Map;
 
 @Entity(name = "user")
 public class UserEntity {
@@ -24,6 +25,7 @@ public class UserEntity {
     private String password;
 
     private String role;
+
 
     public Long getUserId() {
         return userId;

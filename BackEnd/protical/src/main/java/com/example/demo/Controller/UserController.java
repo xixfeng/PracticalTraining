@@ -69,4 +69,20 @@ public class UserController {
         userService.getCode(phone);
         return ResponseUtil.success();
     }
+
+    @RequestMapping("getUserInfo")
+    public ResponseEntity getUserInfo(@RequestBody String json){
+        Map map = (Map) JSON.parse(json);
+        String phone = map.get("phone").toString();
+        return ResponseUtil.success(userService.getUserInfo(phone));
+    }
+
+    @RequestMapping("changeUserName")
+    public ResponseEntity changeUserName(@RequestBody String json){
+        Map map = (Map) JSON.parse(json);
+        String phone = map.get("phone").toString();
+        String name = map.get("name").toString();
+        userService.changeUserName(name,phone);
+        return ResponseUtil.success();
+    }
 }

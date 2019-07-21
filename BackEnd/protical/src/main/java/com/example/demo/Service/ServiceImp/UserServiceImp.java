@@ -73,6 +73,26 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public UserEntity getUserInfo(String phone) {
+        UserEntity userEntity = userRepository.findByPhone(phone);
+        if(userEntity!=null){
+            userEntity.setRole(null);
+            userEntity.setPassword(null);
+            userEntity.setUserId(null);
+        }
+        return userEntity;
+    }
+
+    @Override
+    public UserEntity changeUserName(String name, String phone) {
+        if(isUserExist(phone)){
+            UserEntity userEntity = userRepository.findByPhone(phone);
+            userEntity.setUserName(name);
+        }
+        return null;
+    }
+
+    @Override
     public Boolean isAdmin(HttpSession session) {
         String user = session.getAttribute("user").toString();
         if(user==null)return false;

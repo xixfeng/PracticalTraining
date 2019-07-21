@@ -67,3 +67,182 @@ url:/user/changeUserName
     "data": null
 }
 
+7.管理员增加线路
+url:/trainroute/addticket
+请求参数：{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          }
+ps:id 可以不加。键名要严格与给出的例子一致。
+请求方法：post
+返回参数：{status:"",msg:"",data:""}
+ps:status :200表示增加正常。msg:消息信息，如成功增加，如果增加错误也有相应的消息。在此 data 不用管。
+8.管理员更改线路
+url:/trainroute/updateticket
+请求参数：{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          }
+ps:id 要加。键名要严格与给出的例子一致。
+请求方法：post
+返回参数：{status:"",msg:"",data:""}
+ps:status :200表示更改正常。msg:消息信息，如成功更改，如果更改错误也有相应的消息。在此 data 不用管。
+
+9.管理员增加火车站
+url:/trainstation/add
+请求参数：
+{
+   trainStationId:"",
+   name:""
+}
+请求方法：post
+返回参数：返回参数：{status:"",msg:"",data:""}
+ps:status :200表示增加正常。msg:消息信息，增加，如果增加错误也有相应的消息。在此 data 不用管。
+
+10.管理员删除火车站
+url:/trainstation/delete
+请求参数：{
+   trainStationId:"",
+   name:""
+}
+请求方法：post
+返回参数：{status:"",msg:"",data:""}
+ps:status :200表示删除正常。msg:消息信息，如成功删除，如果删除错误也有相应的消息。在此 data 不用管。
+
+11.管理员查询火车站
+url:/trainstation/query
+请求参数：无
+请求方法：POST
+返回参数：[
+{ trainStationId:"",name:""},
+{ trainStationId:"",name:""},
+{ trainStationId:"",name:""},
+{ trainStationId:"",name:""}....
+]
+
+11.管理员更新火车站
+url:/trainstation/update
+请求参数：{
+   trainStationId:"",
+   name:""
+}
+ps:只能修改name ,Id不能改。
+请求方法：post
+返回参数：status :200表示更新正常。msg:消息信息，如成功更新，如果更新错误也有相应的消息。在此 data 不用管。
+
+12.管理员增加火车
+url:/train/add
+请求参数：{trainId:"",type:""}
+ps:trainId 可以省略
+请求方法：POST
+返回参数：{status:"",msg:"",data:""}
+
+13.管理员删除火车
+url:/train/delete
+请求参数：{trainId:"",type:""}
+ps:trainId 可以省略
+请求方法：POST
+返回参数：{status:"",msg:"",data:""}
+
+14.管理员查询火车
+url:/train/query
+请求参数：
+请求方法：POST
+返回参数：[{trainId:"",type:""},
+{trainId:"",type:""},
+{trainId:"",type:""},
+......]
+
+15.管理员更新火车
+url:/train/update
+请求参数：{trainId:"",type:""}
+请求方法： POST
+返回参数：{status:"",msg:"",data:""}
+
+16.用户判断是否余额满足购买一等座。
+url:/trainorder/judgeydaccount
+请求参数：{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          }
+
+请求方法：POST
+返回参数：{status:"",msg:"",
+	       data:
+	     {
+
+             }
+          }
+ps:如果状态码 200 则余额充足，data 对应的是生成的订单，在购买时把它原样发回就行。
+其他状态码则钱不够了。
+
+
+17.用户判断是否余额满足购买二等座。
+url:/trainorder/judgeedaccount
+请求参数：{
+              "id": 756,
+              "trainId": "D1611",
+              "origin": "石家庄",
+              "destination": "济南",
+              "startTime": "22:00:00",
+              "arriveTime": "00:28:00",
+              "ydNum": 100,
+              "ydPrice": 192.5,
+              "edNum": 100,
+              "edPrice": 119
+          }
+
+请求方法：POST
+返回参数：{status:"",msg:"",
+	       data:
+	     {
+
+             }
+          }
+ps:如果状态码 200 则余额充足，data 对应的是生成的订单，在购买时把它原样发回就行。
+其他状态码则钱不够了
+
+18 下单买票
+url:/trainorder/buyticket
+请求参数：16/17中 data对应的数据
+POST
+返回参数：{status:"",msg:"",data:""}
+19. 查询账单
+url:/trainorder/querytransation
+请求参数：无
+请求方法：post
+返回参数：[{
+orderId："",
+userId:"",
+trainId:"",
+fee:"",
+discount:"",
+orgin:"",
+destination:"",
+type:"",
+seat:""
+},...]

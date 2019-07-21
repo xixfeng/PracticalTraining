@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PracticalTraining.iml" filepath="$PROJECT_DIR$/.idea/PracticalTraining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BackEnd/protical/PracticalTraining.iml" filepath="$PROJECT_DIR$/BackEnd/protical/PracticalTraining.iml" />
       <module fileurl="file://$PROJECT_DIR$/BackEnd/protical/chapter-5-spring-boot-data-jpa.iml" filepath="$PROJECT_DIR$/BackEnd/protical/chapter-5-spring-boot-data-jpa.iml" />
     </modules>
   </component>

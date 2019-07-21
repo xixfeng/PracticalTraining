@@ -52,7 +52,7 @@ export default {
         this.isloading = true;
         console.log(this.phone);
         console.log(this.key);
-        this.axios.post("http://120.78.87.173:8080/user/login", {phone: this.phone, key: this.key}).then(response => {
+        this.axios.post("http://192.168.43.130:8080/user/login", {phone: this.phone, key: this.key}).then(response => {
           console.log(response);
           console.log(response.data);
           console.log(response.data.data);

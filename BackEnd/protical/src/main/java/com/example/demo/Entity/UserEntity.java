@@ -17,7 +17,7 @@ public class UserEntity {
 
     private Double balance;
 
-    private String avatar;
+    private String avatar;//head
 
     private Timestamp date;
 

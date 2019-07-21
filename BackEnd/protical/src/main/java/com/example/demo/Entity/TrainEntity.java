@@ -1,5 +1,6 @@
 package com.example.demo.Entity;
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity(name = "train")
 public class TrainEntity {
@@ -24,6 +25,10 @@ public class TrainEntity {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public TrainEntity(Map map){
+        this.trainId=(String)map.get("trainId");
+        this.type=(String)map.get("type");
     }
 
 }

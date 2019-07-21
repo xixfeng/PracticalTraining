@@ -1,5 +1,6 @@
 package com.example.demo.Entity;
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity(name = "train_order")
 public class TrainOrderEntity {
@@ -23,7 +24,16 @@ public class TrainOrderEntity {
     private String type;
 
     private String seat;
-
+    public TrainOrderEntity(Map map){
+        this.userId=Long.valueOf((String)map.get("userId"));
+        this.trainId=(String)map.get("trainId");
+        this.fee=Double.parseDouble((String)map.get("fee"));
+        this.discount=Double.parseDouble((String)map.get("diacount"));
+        this.orgin=(String)map.get("orgin");
+        this.destination=(String)map.get("destination");
+        this.type=(String)map.get("type");
+        this.seat=(String)map.get("seat");
+    }
 
     public Long getOrderId() {
         return orderId;

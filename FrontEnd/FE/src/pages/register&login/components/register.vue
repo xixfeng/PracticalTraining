@@ -71,7 +71,7 @@
           },
         getcode(){
             if(this.phone !== ''){
-              this.axios.post('/user/getCode',{phone:this.phone}).then(res =>{
+              this.axios.post('http://120.78.87.173:8080/user/getCode',{phone:this.phone}).then(res =>{
                 console.log(res)
               }).catch(function(e){
                 console.log(e)
@@ -87,15 +87,15 @@
           if(this.$route.params.isregister === 'true'){
             if(  this.phone !== '' && this.code !== '' && this.key !== '' && this.user !== '' && !(this.key !== this.verification && this.key !== '')){
               this.isloading = true;
-              this.axios.post('/user/register',{user:this.user, key:this.key, phone:this.phone, code:this.code}).then(response => {
+              this.axios.post('http://120.78.87.173:8080/user/register',{user:this.user, key:this.key, phone:this.phone, code:this.code}).then(response => {
                 console.log(response);
-                if(response.status === 400){
+                if(response.data.status === 400){
                   alert("验证码错误");
                 }
-                if(response.status === 401){
+                if(response.data.status === 401){
                   alert("手机号已经被注册");
                 }
-                if(response.status === 404){
+                if(response.data.status === 404){
                   alert("服务器404错误");
                 }
                 else{
@@ -115,7 +115,7 @@
           else{
             if(  this.phone !== '' && this.code !== '' && this.key !== '' && !(this.key !== this.verification && this.key !== '')){
               this.isloading = true;
-              this.axios.post('/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}).then(response => {
+              this.axios.post('http://120.78.87.173:8080/user/retrievePassword',{ key:this.key, phone:this.phone, code:this.code}).then(response => {
                 console.log(response);
                 if(response.status === 400){
                   alert("验证码错误");

@@ -37,12 +37,12 @@
           submit(){
             if(this.startcity !== '' && this.arrivalcity !== '' && this.startday !== ''){
               this.isloading = true;
-              //TODO 更改为接收到数据之后再跳转
-                this.$router.push({name:'resultpane'});
-              this.axios.get('/query/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
+              this.axios.post('http://120.78.87.173:8080/query/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
                 console.log(res);
-                this.$parent.$parent.ticketdata = res;
-              }).catch(function(e){
+                //TODO 更改url测试
+                this.$parent.$parent.ticketdata = res.data.data;
+                this.$router.push({name:'resultpane'});
+              }).catch(e =>{
                 console.log(e);
               })
             }

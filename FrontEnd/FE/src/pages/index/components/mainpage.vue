@@ -1,10 +1,10 @@
 <template>
   <div >
     <el-row style="background-color: white;color:black;padding:20px;border-radius: 0 0 40px 40px">
-      <el-col span="5">
-<!--        图片-->
+      <el-col span="2" offset="6">
+        <el-image :src="imgsrc.idView" style="height: 50px; width: 50px;padding-top:7px"></el-image>
       </el-col>
-      <el-col span="18">
+      <el-col span="10">
         <h2>线上铁路订票系统</h2>
       </el-col>
       <el-col span="4">
@@ -30,6 +30,7 @@ export default {
   name: 'mainpage',
   data () {
     return {
+      imgsrc:{idView: require('../assets/5.png')},
       msg: '当前是index页面',
       phone:'',
       activetab:'/ticketsearching',

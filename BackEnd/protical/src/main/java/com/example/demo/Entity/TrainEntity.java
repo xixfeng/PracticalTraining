@@ -30,5 +30,4 @@ public class TrainEntity {
         this.trainId=(String)map.get("trainId");
         this.type=(String)map.get("type");
     }
-
 }

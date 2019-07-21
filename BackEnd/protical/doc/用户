@@ -38,5 +38,11 @@ url:/query/searchticket
           },{},{},{}......]
 
 
-7.
+7.查看用户信息
+url:/user/getUserInfo
+请求参数:{phone}
+
+8.修改用户名
+url:/user/changeUserName
+请求参数:{phone,name}
 

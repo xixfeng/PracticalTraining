@@ -37,7 +37,8 @@
           submit(){
             if(this.startcity !== '' && this.arrivalcity !== '' && this.startday !== ''){
               this.isloading = true;
-              this.$router.push({name:'resultpane'});
+              //TODO 更改为接收到数据之后再跳转
+                this.$router.push({name:'resultpane'});
               this.axios.get('/query/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
                 console.log(res);
                 this.$parent.$parent.ticketdata = res;
@@ -49,6 +50,10 @@
               this.$message("请输入完整的信息")
             }
           }
+      },
+      mounted() {
+        document.getElementById("wrapper").style.marginLeft = "330px";
+        document.getElementById("wrapper").style.marginTop = "100px";
       }
     }
 </script>

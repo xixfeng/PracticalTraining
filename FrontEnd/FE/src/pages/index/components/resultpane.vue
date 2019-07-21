@@ -1,6 +1,13 @@
 <template>
 <div style="background-color: white;height:580px;overflow: scroll;border-radius: 13px">
-  <h1>查询结果</h1>
+  <el-row>
+    <el-col span="1" style="padding:20px">
+      <el-button type="primary" icon="el-icon-back" circle @click="goback()"></el-button>
+    </el-col>
+    <el-col span="23">
+      <h1>查询结果</h1>
+    </el-col>
+  </el-row>
   <el-row class="rows">
     <el-col span="2" v-for="cols in columns" style="border-radius: 20px;padding:10px;font-size: 12px">{{cols}}</el-col>
   </el-row>
@@ -24,6 +31,10 @@
       methods:{
         purchase(id) {
           this.$message("点击的是" + id);
+          this.$router.push({path:'/purchasing/' + id});
+        },
+        goback(){
+          this.$router.back();
         }
       },
       mounted() {

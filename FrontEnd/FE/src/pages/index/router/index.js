@@ -11,6 +11,7 @@ import p_orders from "../components/p_orders";
 import p_info from "../components/p_info";
 import formpane from "../components/formpane";
 import resultpane from "../components/resultpane";
+import purchasing from "../components/purchasing";
 
 
 Vue.use(Router)
@@ -47,9 +48,13 @@ export default new Router({
             component:trains
           }]
         },{
-          path:'/resultpane/:phone',
+          path:'/resultpane',
           name:'resultpane',
           component:resultpane
+        },{
+          path:'/purchasing/:id',
+          name:'purchasing',
+          component:purchasing
         }]
       },{
         path:'/ticketsearching',
@@ -80,6 +85,10 @@ export default new Router({
           path:'/resultpane',
           name:'resultpane',
           component:resultpane
+        },{
+          path:'/purchasing/:id',
+          name:'purchasing',
+          component:purchasing
         }]
       }, {
         path:'/profile',

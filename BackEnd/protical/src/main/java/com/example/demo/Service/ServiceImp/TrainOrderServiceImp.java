@@ -5,6 +5,7 @@ import com.example.demo.Entity.Repository.TrainRouteRepository;
 import com.example.demo.Entity.Repository.UserRepository;
 import com.example.demo.Entity.TrainOrderEntity;
 import com.example.demo.Entity.TrainRouteEntity;
+import com.example.demo.Entity.UserEntity;
 import com.example.demo.Service.TrainOrderService;
 import com.example.demo.Util.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,17 @@ public class TrainOrderServiceImp implements TrainOrderService {
     @Override
     public ResponseEntity buyTicket(TrainOrderEntity trainOrderEntity, String phoneNumber) {
         try{
+            //余额要减少。
+            UserEntity userEntity=userRepository.findById(trainOrderEntity.getUserId()).get();
+            Double balance=userRepository.findById(trainOrderEntity.getUserId()).get().getBalance();
+            Double fee=trainOrderEntity.getFee()*trainOrderEntity.getDiscount();
+            System.out.println(balance);
+            balance=balance-fee;
+            System.out.println(balance);
+            userEntity.setBalance(balance);
+            userRepository.save(userEntity);
+            //userRepository.updateUserBalance(balance,trainOrderEntity.getUserId());
+            //System.out.println(trainOrderEntity.toString());
             trainOrderRepository.save(trainOrderEntity);
             return new ResponseEntity(200,"success buy",null);
         }catch(Exception e){

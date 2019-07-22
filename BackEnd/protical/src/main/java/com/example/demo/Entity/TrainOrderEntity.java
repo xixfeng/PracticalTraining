@@ -25,10 +25,10 @@ public class TrainOrderEntity {
 
     private String seat;
     public TrainOrderEntity(Map map){
-        this.userId=Long.valueOf((String)map.get("userId"));
+        this.userId=((Integer)map.get("userId")).longValue();
         this.trainId=(String)map.get("trainId");
-        this.fee=Double.parseDouble((String)map.get("fee"));
-        this.discount=Double.parseDouble((String)map.get("diacount"));
+        this.fee=Double.parseDouble(map.get("fee").toString());
+        this.discount=Double.parseDouble(map.get("discount").toString());
         this.orgin=(String)map.get("orgin");
         this.destination=(String)map.get("destination");
         this.type=(String)map.get("type");
@@ -109,5 +109,20 @@ public class TrainOrderEntity {
 
     public void setSeat(String seat) {
         this.seat = seat;
+    }
+
+    @Override
+    public String toString() {
+        return "TrainOrderEntity{" +
+                "orderId=" + orderId +
+                ", userId=" + userId +
+                ", trainId='" + trainId + '\'' +
+                ", fee=" + fee +
+                ", discount=" + discount +
+                ", orgin='" + orgin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", type='" + type + '\'' +
+                ", seat='" + seat + '\'' +
+                '}';
     }
 }

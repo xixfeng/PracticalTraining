@@ -88,6 +88,7 @@ public class UserServiceImp implements UserService {
         if(isUserExist(phone)){
             UserEntity userEntity = userRepository.findByPhone(phone);
             userEntity.setUserName(name);
+            userRepository.save(userEntity);
         }
         return null;
     }

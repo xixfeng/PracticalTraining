@@ -20,7 +20,7 @@
         <el-col span="8">{{this.orderdata.destination }}</el-col>
       </el-row>
       <el-row gutter="4" class="rows">
-        <el-col span="5">座位登记</el-col>
+        <el-col span="5">座位等级</el-col>
         <el-col span="8">{{this.orderdata.seat}}</el-col>
       </el-row>
       <el-row gutter="4" class="rows">

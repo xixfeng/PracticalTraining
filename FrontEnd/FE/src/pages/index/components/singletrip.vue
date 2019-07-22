@@ -53,8 +53,8 @@
           }
       },
       mounted() {
-        document.getElementById("wrapper").style.marginLeft = "330px";
-        document.getElementById("wrapper").style.marginTop = "100px";
+        document.getElementById("wrapper").style.marginLeft = "25%";
+        document.getElementById("wrapper").style.marginTop = "10%";
       }
     }
 </script>

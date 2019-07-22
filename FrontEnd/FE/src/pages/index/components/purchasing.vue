@@ -171,8 +171,8 @@
         }
       },
       mounted() {
-        document.getElementById("wrapper").style.marginLeft = "330px";
-        document.getElementById("wrapper").style.marginTop = "70px";
+        document.getElementById("wrapper").style.marginLeft = "25%";
+        document.getElementById("wrapper").style.marginTop = "5%";
       }
     }
 </script>

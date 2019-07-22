@@ -48,32 +48,33 @@ export default {
   },
   methods:{
     check(){
-      // if(this.phone !== '' && this.key !== '') {
-      //   this.isloading = true;
-      //   this.axios.get("/user/login", {phone: this.phone, key: this.key}).then(res => {
-      //     console.log(res);
-      //     this.usertype = res.usertype;
-      //     this.isValid = res.status;
-      //     if (this.isValid === 400) {
-      //       alert("用户名或密码错误");
-      //       this.isloading = false;
-      //       return;
-      //     }
-      //     //TODO 跳转到管理员页面所在的html
-      //     // if (this.usertype === "admin") {
-      //     //   window.location.href = "xxx.html?phone=" + this.phone;
-      //     // }
-      //     if (this.usertype === 'users') {
-      //       window.location.href = "index.html?phone=" + this.phone;
-      //     }
-      //   }).catch(function (e) {
-      //     console.log(e)
-      //   });
-      // }
-      // else{
-      //   this.$message.error("请填写完整的信息");
-      // }
-      window.location.href = "index.html?phone=" + this.phone;
+      if(this.phone !== '' && this.key !== '') {
+        this.isloading = true;
+        console.log(this.phone);
+        console.log(this.key);
+        this.axios.post("http://192.168.43.130:8080/user/login", {phone: this.phone, key: this.key}).then(response => {
+          console.log(response);
+          console.log(response.data);
+          console.log(response.data.data);
+          //TODO 跳转到管理员页面所在的html
+          // if (this.usertype === "admin") {
+          //   window.location.href = "xxx.html?phone=" + this.phone;
+          // }
+          if(response.data.status === 400){
+            this.$message.error("用户名或者密码错误");
+            this.isloading = false;
+          }
+          if (response.data.data.role === 'customer') {
+            window.location.href = "index.html?phone=" + this.phone;
+          }
+        }).catch(function (e) {
+          console.log(e);
+        });
+      }
+      else{
+        this.$message.error("请填写完整的信息");
+      }
+      // window.location.href = "index.html?phone=" + this.phone;
     },
     toregister(){
       this.$router.push('/register/true');

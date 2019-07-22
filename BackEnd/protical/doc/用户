@@ -246,3 +246,16 @@ destination:"",
 type:"",
 seat:""
 },...]
+
+Test
+{
+destination: "秦皇岛"
+discount: 1
+fee: 104.5
+orderId: null
+orgin: "北京"
+seat: "一等座"
+trainId: "D101"
+type: "D"
+userId: 2
+}

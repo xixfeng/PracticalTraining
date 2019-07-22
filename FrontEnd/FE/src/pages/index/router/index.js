@@ -103,12 +103,12 @@ export default new Router({
           name:'p_info',
           component:p_info,
         },{
-          path:'/p_orders/:o_type',
+          path:'/p_orders',
           name:p_orders,
           component:p_orders
         },{
           path:'/suggestion',
-          name:'/suggestion',
+          name:'suggestion',
           component:suggestion
         }]
       }]

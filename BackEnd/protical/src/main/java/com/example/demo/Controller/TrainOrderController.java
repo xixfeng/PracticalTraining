@@ -35,9 +35,8 @@ public class TrainOrderController {
     }
     @RequestMapping(value="/judgeedaccount",method=POST)
     public ResponseEntity judgeEdAccount(@RequestBody String content, HttpSession session){
-        String phone=(String) session.getAttribute("user");
-        System.out.println("是不是第一次创建 session"+session.isNew()+" user: "+phone);
         Map map=(Map) JSON.parse(content);
+        String phone=(String)map.get("phone");
         TrainRouteEntity trainRouteEntity=new TrainRouteEntity();
         trainRouteEntity.setTrainRouteEntity(map);
         return trainOrderService.judgeAccountEnough(trainRouteEntity,phone,"ed");
@@ -49,8 +48,9 @@ public class TrainOrderController {
         return trainOrderService.buyTicket(trainOrderEntity,"");
     }
     @RequestMapping(value = "/querytransation",method = POST)
-    public ResponseEntity queryTransation(HttpSession session){
-        String phone=(String)session.getAttribute("user");
+    public ResponseEntity queryTransation(@RequestBody String user){
+        Map map=(Map) JSON.parse(user);
+        String phone=(String) map.get("phone");
         return trainOrderService.queryTransation(phone);
     }
 }

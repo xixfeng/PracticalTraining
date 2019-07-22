@@ -35,12 +35,13 @@
       },
       methods:{
           submit(){
+            console.log(this.$parent.$parent.$parent.$parent.$parent.ticketdata);
             if(this.startcity !== '' && this.arrivalcity !== '' && this.startday !== ''){
               this.isloading = true;
-              this.axios.post('http://120.78.87.173:8080/query/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
+              this.axios.post('http://120.78.87.173:8080/trainroute/searchticket',{startcity:this.startcity,arrivalcity:this.arrivalcity,startday:this.startday}).then(res =>{
                 console.log(res);
                 //TODO 更改url测试
-                this.$parent.$parent.ticketdata = res.data.data;
+                this.$parent.$parent.$parent.$parent.$parent.ticketdata = res.data;
                 this.$router.push({name:'resultpane'});
               }).catch(e =>{
                 console.log(e);

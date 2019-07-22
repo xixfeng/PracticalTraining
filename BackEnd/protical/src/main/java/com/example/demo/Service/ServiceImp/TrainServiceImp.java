@@ -27,6 +27,7 @@ public class TrainServiceImp implements TrainService {
             trainRepository.save(trainEntity);
             return new ResponseEntity(200,"增加列车成功",null);
         }catch (Exception e){
+            System.out.println(e.toString());
             return new ResponseEntity(604,"增加列车错误",null);
         }
     }

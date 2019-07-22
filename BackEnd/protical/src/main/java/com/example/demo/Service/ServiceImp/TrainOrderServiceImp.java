@@ -36,7 +36,8 @@ public class TrainOrderServiceImp implements TrainOrderService {
             Double account=userRepository.findByPhone(phoneNumber).getBalance();
             if(type.equals("yd")){
                 Double ydPrice=trainRouteEntity.getYdPrice();
-                if(account>=ydPrice){
+                System.out.println("yd="+ydPrice+" account="+account);
+                if(account!=null&&account>=ydPrice){
                     trainOrderEntity.setFee(trainRouteEntity.getYdPrice());
                     trainOrderEntity.setDiscount(1.0);
                     trainOrderEntity.setSeat("一等座");

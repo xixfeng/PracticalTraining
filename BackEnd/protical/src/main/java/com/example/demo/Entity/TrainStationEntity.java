@@ -32,4 +32,5 @@ public class TrainStationEntity {
         this.name=(String)map.get("name");
         this.trainStationId=Long.parseLong((String)map.get("trainStationId"));
     }
+    public TrainStationEntity(){}
 }

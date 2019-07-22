@@ -42,8 +42,9 @@ public class TrainRouteController {
     @RequestMapping(value="/deleteticket",method=RequestMethod.POST)
     public ResponseEntity deleteTicket(@RequestBody String content){
          Map toDeleteTrainRoute=(Map)JSON.parse(content);
-         Long id = Long.parseLong(toDeleteTrainRoute.get("id").toString());
-         return trainRouteService.deleteRouteById(id);
+         TrainRouteEntity deleteTicket=new TrainRouteEntity();
+         deleteTicket.setTrainRouteEntity(toDeleteTrainRoute);
+         return trainRouteService.deleteRouteById(deleteTicket.getId());
     }
     //管理员更改线路，已经下单的不管。
     @RequestMapping(value="/updateticket",method = RequestMethod.POST)

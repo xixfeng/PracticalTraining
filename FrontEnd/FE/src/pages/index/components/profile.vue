@@ -4,14 +4,7 @@
       <el-col span="6" style="border-radius: 20px;border-style: solid ;border-color: #E4E7ED;border-width: 1px;">
         <el-menu router="true" style="height:600px;border-radius: 20px">
           <el-menu-item index="/p_info" style="margin-top: 20px">个人信息管理</el-menu-item>
-          <el-submenu index="/orders">
-            <template slot="title">
-              <i class="el-icon-s-order"></i>
-              <span >我的订单</span>
-            </template>
-            <el-menu-item index="/p_orders/histroy">历史订单</el-menu-item>
-            <el-menu-item index="/p_orders/tobedone">待出行</el-menu-item>
-          </el-submenu>
+            <el-menu-item index="/p_orders">历史订单</el-menu-item>
           <el-menu-item index="/suggestion">产品建议</el-menu-item>
         </el-menu>
       </el-col>

@@ -1,22 +1,22 @@
 <template>
 <div style="height:400px;">
   <el-form label-width="80px">
-    <el-form-item label="手机号码:">
+    <el-form-item label="手机号码:" class="rows">
       <el-col span="13">
-        <el-input v-model="this.$parent.$parent.$parent.$parent.phone" disabled="true"></el-input>
+        <el-input v-model="this.$parent.$parent.$parent.$parent.phone" disabled="true" ></el-input>
       </el-col>
     </el-form-item>
-    <el-form-item label="用户名:">
+    <el-form-item label="用户名:" class="rows">
       <el-row>
         <el-col span="13">
           <el-input v-model="user"></el-input>
         </el-col>
         <el-col span="8">
-          <el-button @click="alterusername" v-bind:loading="isloading">更改用户名</el-button>
+          <el-button @click="alterusername" v-bind:loading="isloading" >更改用户名</el-button>
         </el-col>
       </el-row>
     </el-form-item>
-    <el-form-item label="当前余额:">
+    <el-form-item label="当前余额:" class="rows">
       <el-col span="5" style="border-radius: 13px;background-color: #66b1ff;color:white;font-size: 30px;">{{this.balance}}</el-col>
       <el-col span="3">元</el-col>
     </el-form-item>
@@ -82,5 +82,8 @@
 </script>
 
 <style scoped>
-
+.rows{
+  height:60px;
+  margin:40px;
+}
 </style>

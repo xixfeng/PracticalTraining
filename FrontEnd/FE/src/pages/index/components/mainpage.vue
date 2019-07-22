@@ -45,7 +45,7 @@ export default {
   },
   methods:{
     logout(){
-
+      window.location.href("register&login.html");
     }
   }
 }

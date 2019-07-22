@@ -88,7 +88,10 @@ public class TrainOrderServiceImp implements TrainOrderService {
     @Override
     public ResponseEntity queryTransation(String phoneNumber) {
         try {
-            List<TrainOrderEntity> trainOrderEntityList = trainOrderRepository.findAll();
+            UserEntity userEntity=userRepository.findByPhone(phoneNumber);
+            System.out.println(phoneNumber+":"+userEntity.getUserId());
+            List<TrainOrderEntity> trainOrderEntityList = trainOrderRepository.findOrderById(userEntity.getUserId());
+            System.out.println(trainOrderEntityList.size());
             return new ResponseEntity(200,"succuss query",trainOrderEntityList);
         }catch(Exception e){
             e.printStackTrace();

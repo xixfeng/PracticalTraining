@@ -20,7 +20,7 @@ public class UserEntity {
 
     private String avatar;//head
 
-    private Timestamp date;
+    private Timestamp date =  new Timestamp(System.currentTimeMillis());
 
     private String password;
 

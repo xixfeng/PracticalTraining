@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 600px;height: 400px;overflow: scroll;margin:20px">
+  <div style="width: 600px;height: 500px;overflow: scroll;margin:20px">
     <h1 v-if="this.isComfirming">订单详情</h1>
     <h1 v-else>车次详情</h1>
     <div v-if="this.isComfirming">
@@ -20,7 +20,7 @@
         <el-col span="8">{{this.orderdata.destination }}</el-col>
       </el-row>
       <el-row gutter="4" class="rows">
-        <el-col span="5">座位登记</el-col>
+        <el-col span="5">座位等级</el-col>
         <el-col span="8">{{this.orderdata.seat}}</el-col>
       </el-row>
       <el-row gutter="4" class="rows">
@@ -103,18 +103,19 @@
             isloading1:false,
             isloading2:false,
             isComfirming:false,
-            orderdata:[]
+            orderdata:[],
+            isloading3:false,
           }
         },
       methods:{
         purchasing(level){
           if(level === 'firstclass') {
           this.isloading1 = true;
-            var url = 'http://192.168.43.130:8080/trainorder/judgeydaccount';
+            var url = 'http://120.78.87.173:8080/trainorder/judgeydaccount';
           }
           else{
             this.isloading2 = true;
-            var url = 'http://192.168.43.130:8080/trainorder/judgeedaccount';
+            var url = 'http://120.78.87.173:8080/trainorder/judgeedaccount';
           }
             console.log(this.$parent.$parent.selectedticket);
 
@@ -149,26 +150,29 @@
         },
         comfirming(){
           console.log(this.orderdata);
-          this.axios.post('http://192.168.43.130:8080/trainorder/buyticket',this.orderdata).then(res => {
+          this.isloading3 = true;
+          this.axios.post('http://120.78.87.173:8080/trainorder/buyticket',this.orderdata).then(res => {
             console.log(res);
             if(res.data.status === 200){
               this.$message({
                 message:"购买成功",
                 type:'success'
-              })
+              });
+              this.$router.push({path:'/ticketsearching'});
             }
           }).catch(e => {
             console.log(e);
           })
         },
-
+        cancel(){
+          this.isComfirming = false;
+          this.isloading1 = false;
+          this.isloading2 = false;
+        }
       },
       mounted() {
         document.getElementById("wrapper").style.marginLeft = "330px";
         document.getElementById("wrapper").style.marginTop = "70px";
-      },
-      cancel(){
-          this.isComfirming = false;
       }
     }
 </script>

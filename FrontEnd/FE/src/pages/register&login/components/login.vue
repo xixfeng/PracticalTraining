@@ -52,17 +52,18 @@ export default {
         this.isloading = true;
         console.log(this.phone);
         console.log(this.key);
-        this.axios.post("http://192.168.43.130:8080/user/login", {phone: this.phone, key: this.key}).then(response => {
+        this.axios.post("http://120.78.87.173:8080/user/login", {phone: this.phone, key: this.key}).then(response => {
           console.log(response);
           console.log(response.data);
           console.log(response.data.data);
           //TODO 跳转到管理员页面所在的html
-          // if (this.usertype === "admin") {
-          //   window.location.href = "xxx.html?phone=" + this.phone;
-          // }
           if(response.data.status === 400){
             this.$message.error("用户名或者密码错误");
             this.isloading = false;
+            return;
+          }
+          if (response.data.data.role === 'admin') {
+            window.location.href =  "http://120.78.87.173:10001";
           }
           if (response.data.data.role === 'customer') {
             window.location.href = "index.html?phone=" + this.phone;

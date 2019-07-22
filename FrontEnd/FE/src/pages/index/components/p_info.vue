@@ -65,6 +65,7 @@
         alterusername(){
           this.isloading = true;
           this.axios.post('http://120.78.87.173:8080/user/changeUserName',{phone:this.phone,name:this.user}).then(res =>{
+            console.log(this.user);
             console.log(res);
             if(res.data.status === 200){
               this.$message({

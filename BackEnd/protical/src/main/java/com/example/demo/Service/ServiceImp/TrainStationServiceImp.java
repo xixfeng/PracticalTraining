@@ -45,7 +45,6 @@ public class TrainStationServiceImp implements TrainStationService {
     @Override
     public ResponseEntity updateTrainStation(TrainStationEntity trainStationEntity) {
         try{
-            trainStationRepository.deleteById(trainStationEntity.getTrainStationId());
             trainStationRepository.save(trainStationEntity);
             return new ResponseEntity(200,"更新站点成功",null);
         }catch (Exception e){

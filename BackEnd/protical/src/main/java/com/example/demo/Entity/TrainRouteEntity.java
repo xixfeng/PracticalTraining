@@ -1,12 +1,13 @@
 package com.example.demo.Entity;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.sql.Time;
 import java.util.Map;
 
 @Entity(name = "train_route")
 public class TrainRouteEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "train_id")
@@ -125,17 +126,33 @@ public class TrainRouteEntity {
         this.edPrice=trainRouteEntity.edPrice;
         this.destination=trainRouteEntity.destination;
     }
-    public TrainRouteEntity(){}
-    public TrainRouteEntity(Map map){
-        if(map.containsKey("id"))this.id= Long.parseLong((String) map.get("id"));
+    public void setTrainRouteEntity(Map map){
+        if(map.containsKey("id"))this.id= ((Integer)map.get("id")).longValue();
         this.arriveTime= Time.valueOf((String)map.get("arriveTime"));
         this.destination=(String)map.get("destination");
-        this.edNum=Long.parseLong((String)map.get("edNum"));
-        this.edPrice=Double.parseDouble((String)map.get("edPrice"));
+        this.edNum=((Integer)map.get("edNum")).longValue();
+        this.edPrice=Double.parseDouble(map.get("edPrice").toString());
         this.origin=(String)map.get("origin");
         this.startTime=Time.valueOf((String)map.get("startTime"));
-        this.ydNum=Long.parseLong((String)map.get("ydNum"));
-        this.ydPrice=Double.parseDouble((String)map.get("ydPrice"));
+        this.ydNum=((Integer)map.get("ydNum")).longValue();
+        this.ydPrice=Double.parseDouble(map.get("ydPrice").toString());
         this.trainId=(String)map.get("trainId");
+
+    }
+
+    @Override
+    public String toString() {
+        return "TrainRouteEntity{" +
+                "id=" + id +
+                ", trainId='" + trainId + '\'' +
+                ", origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", startTime=" + startTime +
+                ", arriveTime=" + arriveTime +
+                ", ydNum=" + ydNum +
+                ", ydPrice=" + ydPrice +
+                ", edNum=" + edNum +
+                ", edPrice=" + edPrice +
+                '}';
     }
 }

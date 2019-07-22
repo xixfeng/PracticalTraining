@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.alibaba.fastjson.JSON;
 import com.example.demo.Entity.TrainRouteEntity;
+import com.example.demo.Entity.UserEntity;
 import com.example.demo.Service.TrainRouteService;
 import com.example.demo.Util.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,16 +35,23 @@ public class TrainRouteController {
     @RequestMapping(value = "/addticket",method=RequestMethod.POST)
     public ResponseEntity addTicket(@RequestBody String content){
         Map newTrainRoute=(Map)JSON.parse(content);
-        TrainRouteEntity newTrainRouteEntity=new TrainRouteEntity(newTrainRoute);
-        return trainRouteService.insertNewRoute(newTrainRouteEntity);
+        TrainRouteEntity trainRouteEntity = JSON.parseObject(content,TrainRouteEntity.class);
+        return trainRouteService.insertNewRoute(trainRouteEntity);
     }
     //管理员删除线路,要考虑连锁反应
-
+    @RequestMapping(value="/deleteticket",method=RequestMethod.POST)
+    public ResponseEntity deleteTicket(@RequestBody String content){
+         Map toDeleteTrainRoute=(Map)JSON.parse(content);
+         TrainRouteEntity deleteTicket=new TrainRouteEntity();
+         deleteTicket.setTrainRouteEntity(toDeleteTrainRoute);
+         return trainRouteService.deleteRouteById(deleteTicket.getId());
+    }
     //管理员更改线路，已经下单的不管。
     @RequestMapping(value="/updateticket",method = RequestMethod.POST)
     public ResponseEntity updateTicket(@RequestBody String content){
          Map newTrainRoute=(Map)JSON.parse(content);
-         TrainRouteEntity updateTrainRouteEntity=new TrainRouteEntity(newTrainRoute);
+         TrainRouteEntity updateTrainRouteEntity=new TrainRouteEntity();
+         updateTrainRouteEntity.setTrainRouteEntity(newTrainRoute);
          return trainRouteService.updateRoute(updateTrainRouteEntity.getId(),updateTrainRouteEntity);
     }
 }

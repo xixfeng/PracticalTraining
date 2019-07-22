@@ -35,7 +35,7 @@ public class TrainStationController {
         return trainStationService.deleteTrainStation(trainStationEntity);
     }
     @RequestMapping(value = "/query",method = RequestMethod.POST)
-    public List<TrainStationEntity> queryStation(@RequestBody String content){
+    public List<TrainStationEntity> queryStation(){
         return trainStationService.queryTrainStation();
     }
     @RequestMapping(value="/update",method = RequestMethod.POST)
@@ -44,5 +44,4 @@ public class TrainStationController {
         TrainStationEntity trainStationEntity=new TrainStationEntity(map);
         return trainStationService.updateTrainStation(trainStationEntity);
     }
-
 }

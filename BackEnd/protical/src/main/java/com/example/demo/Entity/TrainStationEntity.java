@@ -30,6 +30,7 @@ public class TrainStationEntity {
     }
     public TrainStationEntity(Map map){
         this.name=(String)map.get("name");
-        this.trainStationId=Long.parseLong((String)map.get("trainStationId"));
+        if(map.containsKey("trainStationId"))this.trainStationId=((Integer)map.get("trainStationId")).longValue();
     }
+    public TrainStationEntity(){}
 }

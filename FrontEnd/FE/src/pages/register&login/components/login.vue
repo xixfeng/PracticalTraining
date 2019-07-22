@@ -57,12 +57,13 @@ export default {
           console.log(response.data);
           console.log(response.data.data);
           //TODO 跳转到管理员页面所在的html
-          if (response.data.data.role === 'admin') {
-            //跨域跳转
-          }
           if(response.data.status === 400){
             this.$message.error("用户名或者密码错误");
             this.isloading = false;
+            return;
+          }
+          if (response.data.data.role === 'admin') {
+            window.location.href =  "http://120.78.87.173:10001";
           }
           if (response.data.data.role === 'customer') {
             window.location.href = "index.html?phone=" + this.phone;

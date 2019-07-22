@@ -45,7 +45,7 @@
       mounted() {
           this.axios.post('http://120.78.87.173:8080/trainorder/querytransation',{phone:this.$parent.$parent.$parent.$parent.phone}).then( res=> {
             console.log(res);
-            this.tabledata = res.data;
+            this.tabledata = res.data.data;
           }).catch(error => {
             console.log(error)
           })

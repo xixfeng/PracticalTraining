@@ -4,8 +4,15 @@
       <div class="inner-wrapper">
         <el-form label-width="100px">
           <el-form-item>
+            <template slot="label">
+            <el-col span="3">
+              <el-button type="primary" icon="el-icon-back" circle @click="goback()"></el-button>
+            </el-col>
+            </template>
+            <el-col span="6">
             <h3 v-if="this.$route.params.isregister === 'true'">注册新用户</h3>
             <h3 v-else>找回密码</h3>
+            </el-col>
           </el-form-item>
           <el-form-item label="用户名" v-if="this.$route.params.isregister === 'true'">
             <el-input v-model="user"></el-input>
@@ -140,6 +147,9 @@
               alert("信息尚未填写完整");
             }
           }
+        },
+        goback(){
+            this.$router.back();
         }
       }
     }

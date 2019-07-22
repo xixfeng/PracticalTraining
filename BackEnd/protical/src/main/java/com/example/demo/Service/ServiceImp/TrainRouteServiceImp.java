@@ -26,7 +26,7 @@ public class TrainRouteServiceImp implements TrainRouteService {
     @Override
     public ResponseEntity insertNewRoute(TrainRouteEntity trainRouteEntity) {
         try{
-            trainRouteRepository.save(trainRouteEntity);
+            trainRouteRepository.saveAndFlush(trainRouteEntity);
             ResponseEntity responseEntity=new ResponseEntity(200,null,null);
             return responseEntity;
         }catch(Exception e){

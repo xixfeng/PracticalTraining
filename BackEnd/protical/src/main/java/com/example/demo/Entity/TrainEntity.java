@@ -5,7 +5,6 @@ import java.util.Map;
 @Entity(name = "train")
 public class TrainEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String trainId;
 
     private String type;
@@ -30,4 +29,5 @@ public class TrainEntity {
         this.trainId=(String)map.get("trainId");
         this.type=(String)map.get("type");
     }
+    public TrainEntity(){}
 }

@@ -33,6 +33,7 @@ public class TrainStationServiceImp implements TrainStationService {
     @Override
     public ResponseEntity deleteTrainStation(TrainStationEntity trainStationEntity) {
         try{
+            System.out.println(trainStationEntity.getTrainStationId());
             trainStationRepository.deleteById(trainStationEntity.getTrainStationId());
             return new ResponseEntity(200,"删除站点成功",null);
         }

@@ -32,6 +32,7 @@ public class UserController {
         ResponseEntity responseEntity = userService.login(phone,key);
         if(responseEntity != null){
             session.setAttribute("user",phone);
+            System.out.println("session 的ID是："+session.getId()+" session的user: "+session.getAttribute("user"));
             return responseEntity;
         }
         else return ResponseUtil.error(400,"用户名或密码错误");

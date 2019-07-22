@@ -35,7 +35,7 @@
       },
       methods:{
         purchase(id) {
-          this.$message("点击的是" + id);
+          // this.$message("点击的是" + id);
           this.$parent.$parent.selectedticket = this.$parent.$parent.ticketdata[id];
           this.$router.push({name:'purchasing',params:{id:id}});
         },

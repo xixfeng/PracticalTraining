@@ -130,11 +130,11 @@ public class TrainRouteEntity {
         if(map.containsKey("id"))this.id= ((Integer)map.get("id")).longValue();
         this.arriveTime= Time.valueOf((String)map.get("arriveTime"));
         this.destination=(String)map.get("destination");
-        this.edNum=((Integer)map.get("edNum")).longValue();
+        this.edNum=Long.parseLong(map.get("edNum").toString());
         this.edPrice=Double.parseDouble(map.get("edPrice").toString());
         this.origin=(String)map.get("origin");
         this.startTime=Time.valueOf((String)map.get("startTime"));
-        this.ydNum=((Integer)map.get("ydNum")).longValue();
+        this.ydNum=Long.parseLong(map.get("ydNum").toString());
         this.ydPrice=Double.parseDouble(map.get("ydPrice").toString());
         this.trainId=(String)map.get("trainId");
 

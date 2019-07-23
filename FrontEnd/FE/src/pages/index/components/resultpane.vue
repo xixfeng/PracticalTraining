@@ -44,8 +44,8 @@
         }
       },
       mounted() {
-          document.getElementById("wrapper").style.marginLeft = "170px";
-          document.getElementById("wrapper").style.marginTop = "50px";
+          document.getElementById("wrapper").style.marginLeft = "14%";
+          document.getElementById("wrapper").style.marginTop = "5%";
       }
     }
 </script>

@@ -136,7 +136,7 @@ public class TrainRouteEntity {
         this.startTime=Time.valueOf((String)map.get("startTime"));
         this.ydNum=Long.parseLong(map.get("ydNum").toString());
         this.ydPrice=Double.parseDouble(map.get("ydPrice").toString());
-        this.trainId=(String)map.get("trainId");
+        this.trainId=(String)map.get("trainId":w);
 
     }
 
